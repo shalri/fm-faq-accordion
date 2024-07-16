@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Work_Sans } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const worksans = Work_Sans({
+  subsets: ["latin"],
+  weight: ["400", "600", "700"],
+});
 
 export const metadata: Metadata = {
   title: "次に(tsugini) | FScode",
@@ -16,7 +19,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} flex min-h-screen flex-col antialiased scroll-smooth`}>
+      <body
+        className={`${worksans.className} flex min-h-screen flex-col scroll-smooth antialiased bg-[url(/assets/images/background-pattern-mobile.svg)] bg-contain bg-top bg-no-repeat`}
+      >
         {children}
       </body>
     </html>
