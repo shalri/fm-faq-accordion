@@ -1,15 +1,31 @@
+"use client";
 import { faqs } from "@/lib/data";
+import Accordion from "./Accordion";
+import { useState } from "react";
+import { motion } from "framer-motion";
 
 export default function FAQComponent() {
+  const [expanded, setExpanded] = useState<number | null>(null);
   return (
-    <section className="flex flex-col items-center justify-center rounded-md bg-white">
+    <section
+      // layout
+      className="flex w-full flex-col justify-center rounded-md bg-white"
+    >
       <h1 className="text-3xl font-bold text-zinc-500">FAQs</h1>
-      {faqs.map((faq) => (
-        <div className="" key={faq.id}>
-          <div className="">{faq.question}</div>
-          <div className="">{faq.answer}</div>
+      <div className="relative w-full">
+        <div className="absolute">
+          {faqs.map((faq, index) => (
+            <Accordion
+              key={faq.id}
+              index={index}
+              expanded={expanded}
+              setExpanded={setExpanded}
+              question={faq.question}
+              answer={faq.answer}
+            />
+          ))}
         </div>
-      ))}
+      </div>
     </section>
   );
 }
