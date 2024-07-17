@@ -28,8 +28,8 @@ export default function Accordion({
         className={cn(
           "hover:text-fuchsia-600 transition-all duration-300 bg-right bg-no-repeat py-2 pr-12 font-semibold leading-[1.15] text-faq-dark-purple sm:text-lg",
           isOpen
-            ? "bg-[url(/assets/images/icon-minus.svg)]"
-            : "bg-[url(/assets/images/icon-plus.svg)]",
+            ? "bg-[url(/fm-faq-accordion/images/icon-minus.svg)]"
+            : "bg-[url(/fm-faq-accordion/images/icon-plus.svg)]",
         )}
      >
         {question}
