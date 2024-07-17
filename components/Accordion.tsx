@@ -1,5 +1,4 @@
 import { AnimatePresence, motion } from "framer-motion";
-import FAQComponent from "./FAQComponent";
 import { cn } from "@/lib/utils";
 
 interface AccordionProps {
