@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${worksans.className} min-h-screen scroll-smooth bg-faq-light-pink bg-[url(/assets/images/background-pattern-mobile.svg)] bg-contain bg-top bg-no-repeat antialiased`}
+        className={`${worksans.className} min-h-screen scroll-smooth bg-faq-light-pink bg-[url(/assets/images/background-pattern-mobile.svg)] bg-contain bg-top bg-no-repeat antialiased sm:bg-[url(/assets/images/background-pattern-desktop.svg)]`}
       >
         {children}
       </body>

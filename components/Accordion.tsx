@@ -22,11 +22,11 @@ export default function Accordion({
     <motion.section
       initial={false}
       onClick={() => setExpanded(isOpen ? false : index)}
-      className={cn("flex cursor-pointer flex-col py-4", index === 0 && "pt-3")}
+      className={cn("flex cursor-pointer flex-col py-4", index === 0 && "pt-3 sm:pt-4")}
     >
       <motion.h2
         className={cn(
-          "hover:text-fuchsia-600 transition-all duration-300 bg-right bg-no-repeat py-2 pr-12 font-semibold leading-[1.15] text-faq-dark-purple",
+          "hover:text-fuchsia-600 transition-all duration-300 bg-right bg-no-repeat py-2 pr-12 font-semibold leading-[1.15] text-faq-dark-purple sm:text-lg",
           isOpen
             ? "bg-[url(/assets/images/icon-minus.svg)]"
             : "bg-[url(/assets/images/icon-plus.svg)]",
@@ -51,7 +51,7 @@ export default function Accordion({
             }}
             className="overflow-hidden"
           >
-            <motion.div className="pb-2 pt-4 text-[0.915rem] leading-[1.425] text-faq-grayish-purple">
+            <motion.div className="pb-2 pt-4 text-[0.915rem] leading-[1.425] text-faq-grayish-purple sm:text-base sm:leading-normal">
               {answer}
             </motion.div>
           </motion.div>

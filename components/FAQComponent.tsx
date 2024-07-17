@@ -7,21 +7,23 @@ import { motion } from "framer-motion";
 export default function FAQComponent() {
   const [expanded, setExpanded] = useState<number | false>(false);
   return (
-    <section className="px-6 flex h-auto w-full flex-col rounded-md bg-white pt-5 pb-1">
-      <h1 className="text-[2rem] font-bold text-faq-dark-purple pl-12 bg-[length:24px_24px] bg-[url(/assets/images/icon-star.svg)] bg-no-repeat bg-[left_center]">FAQs</h1>
+    <section className="flex h-auto w-full flex-col rounded-md bg-white px-6 pb-1 pt-5 sm:max-w-[600px] sm:rounded-[14px] sm:px-10 sm:pt-[30px]">
+      <h1 className="bg-[url(/assets/images/icon-star.svg)] bg-[length:24px_24px] bg-[left_center] bg-no-repeat pl-12 text-[2rem] font-bold text-faq-dark-purple sm:bg-[length:40px_40px] sm:pl-16 sm:text-[3.5rem]">
+        FAQs
+      </h1>
       {/* <div className="w-full"> */}
-        <div className="relative h-full w-full divide-faq-light-pink divide-y">
-          {faqs.map((faq, index) => (
-            <Accordion
-              key={faq.id}
-              index={index}
-              expanded={expanded}
-              setExpanded={setExpanded}
-              question={faq.question}
-              answer={faq.answer}
-            />
-          ))}
-        </div>
+      <div className="relative h-full w-full divide-y divide-faq-light-pink">
+        {faqs.map((faq, index) => (
+          <Accordion
+            key={faq.id}
+            index={index}
+            expanded={expanded}
+            setExpanded={setExpanded}
+            question={faq.question}
+            answer={faq.answer}
+          />
+        ))}
+      </div>
       {/* </div> */}
     </section>
   );
