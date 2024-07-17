@@ -1,10 +1,11 @@
 import { AnimatePresence, motion } from "framer-motion";
 import FAQComponent from "./FAQComponent";
+import { cn } from "@/lib/utils";
 
 interface AccordionProps {
   index: number;
-  expanded: number | null;
-  setExpanded: (index: number | null) => void;
+  expanded: number | false;
+  setExpanded: (index: number | false) => void;
   question: string;
   answer: string;
 }
@@ -20,11 +21,19 @@ export default function Accordion({
   return (
     <motion.section
       initial={false}
-      animate={{ backgroundColor: isOpen ? "#ff0088" : "#0055ff" }}
-      onClick={() => setExpanded(isOpen ? null : index)}
-      className="cursor-pointer"
+      onClick={() => setExpanded(isOpen ? false : index)}
+      className={cn("flex cursor-pointer flex-col py-4", index === 0 && "pt-3")}
     >
-      <div className="">{question}</div>
+      <motion.h2
+        className={cn(
+          "hover:text-fuchsia-600 transition-all duration-300 bg-right bg-no-repeat py-2 pr-12 font-semibold leading-[1.15] text-faq-dark-purple",
+          isOpen
+            ? "bg-[url(/assets/images/icon-minus.svg)]"
+            : "bg-[url(/assets/images/icon-plus.svg)]",
+        )}
+     >
+        {question}
+      </motion.h2>
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -37,12 +46,14 @@ export default function Accordion({
               collapse: { opacity: 0, height: 0 },
             }}
             transition={{
-              duration: 0.8,
+              duration: 0.3,
               ease: [0.04, 0.62, 0.23, 0.98],
             }}
             className="overflow-hidden"
           >
-            <motion.div>{answer}</motion.div>
+            <motion.div className="pb-2 pt-4 text-[0.915rem] leading-[1.425] text-faq-grayish-purple">
+              {answer}
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>

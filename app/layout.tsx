@@ -8,8 +8,8 @@ const worksans = Work_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "次に(tsugini) | FScode",
-  description: "A basic NextJS template for Frontend Mentor Challenges",
+  title: "FAQ | FScode",
+  description: "Solution for FAQ Accordion challenge from Frontend Mentor",
 };
 
 export default function RootLayout({
@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${worksans.className} flex min-h-screen flex-col scroll-smooth antialiased bg-[url(/assets/images/background-pattern-mobile.svg)] bg-contain bg-top bg-no-repeat`}
+        className={`${worksans.className} min-h-screen scroll-smooth bg-faq-light-pink bg-[url(/assets/images/background-pattern-mobile.svg)] bg-contain bg-top bg-no-repeat antialiased`}
       >
         {children}
       </body>

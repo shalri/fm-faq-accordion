@@ -5,15 +5,12 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 
 export default function FAQComponent() {
-  const [expanded, setExpanded] = useState<number | null>(null);
+  const [expanded, setExpanded] = useState<number | false>(false);
   return (
-    <section
-      // layout
-      className="flex w-full flex-col justify-center rounded-md bg-white"
-    >
-      <h1 className="text-3xl font-bold text-zinc-500">FAQs</h1>
-      <div className="relative w-full">
-        <div className="absolute">
+    <section className="px-6 flex h-auto w-full flex-col rounded-md bg-white pt-5 pb-1">
+      <h1 className="text-[2rem] font-bold text-faq-dark-purple pl-12 bg-[length:24px_24px] bg-[url(/assets/images/icon-star.svg)] bg-no-repeat bg-[left_center]">FAQs</h1>
+      {/* <div className="w-full"> */}
+        <div className="relative h-full w-full divide-faq-light-pink divide-y">
           {faqs.map((faq, index) => (
             <Accordion
               key={faq.id}
@@ -25,7 +22,7 @@ export default function FAQComponent() {
             />
           ))}
         </div>
-      </div>
+      {/* </div> */}
     </section>
   );
 }
